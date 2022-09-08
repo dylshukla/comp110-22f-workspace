@@ -37,4 +37,3 @@ if (guess == secret):
 
 if (guess != secret and int(len(guess)) == int(len(secret))):
     print("Not quite. Play again soon!")
-
