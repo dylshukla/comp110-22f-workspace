@@ -2,7 +2,7 @@
 
 __author__: str = "730577405"
 
-secret: str = "knoll"
+secret: str = "python"
 number: int = int(len(secret))
 guess: str = input(f"What is your { number}-letter guess? ")
 WHITE_BOX: str = "\U00002B1C"
