@@ -12,9 +12,11 @@ stuff: str = ""
 i: int = 0
 
 while int(len(guess) != len(secret)):
+    """Prompts user re-input for invalid guess."""
     guess = str(input(f"That was not {number} letters! Try again: "))
 
 if (int(len(guess)) == int(len(secret))):
+    """Checks each letter to see if it is in the right place."""
     while i < int(len(secret)):
         if guess[i] == secret[i]:
             stuff = stuff + GREEN_BOX
@@ -22,6 +24,7 @@ if (int(len(guess)) == int(len(secret))):
             letter_exists = False
             j: int = 0
             while letter_exists is False and j < int(len(secret)):
+                """Loops through for existing letter in word."""
                 if secret[j] == guess[i]:
                     letter_exists = True
                 j += 1
