@@ -21,11 +21,11 @@ if (int(len(guess)) == int(len(secret))):
         else:
             letter_exists = False
             j: int = 0
-            while letter_exists == False and j < int(len(secret)):
+            while letter_exists is False and j < int(len(secret)):
                 if secret[j] == guess[i]:
                     letter_exists = True
                 j += 1
-            if letter_exists == True:
+            if letter_exists is True:
                 stuff += YELLOW_BOX
             else:
                 stuff = stuff + WHITE_BOX
