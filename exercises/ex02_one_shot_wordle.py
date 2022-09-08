@@ -15,7 +15,7 @@ while int(len(guess) != len(secret)):
     guess = str(input(f"That was not {number} letters! Try again: "))
 
 if (int(len(guess)) == int(len(secret))):
-    while(i < int(len(secret))):
+    while i < int(len(secret)):
         if guess[i] == secret[i]:
             stuff = stuff + GREEN_BOX
         else:
