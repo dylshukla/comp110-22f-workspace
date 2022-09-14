@@ -2,6 +2,7 @@
 
 __author__: str = "730577405"
 
+
 def contains_char(word: str, chr: str) -> bool:
     """Function to check indices and mark True/False."""
     assert len(chr) == 1
@@ -13,6 +14,7 @@ def contains_char(word: str, chr: str) -> bool:
         else:
             i += 1
     return False
+
 
 def emojified(guess: str, secret: str) -> str:
     """Loops through word and concatenates emojified boxes."""
@@ -33,12 +35,14 @@ def emojified(guess: str, secret: str) -> str:
         j += 1
     return answer
 
+
 def input_guess(expected: int) -> str:
     """Checks for length of guess and repeats guess based on if condition is met."""
     guess_len: str = input(f"Enter a {expected} character word: ")
     while expected != len(guess_len):
         guess_len = input(f"That wasn't {expected} chars! Try again: ")
     return guess_len
+
 
 def main() -> None:
     """The entrypoint of the program and main game loop."""
@@ -54,6 +58,7 @@ def main() -> None:
         else:
             turns += 1
     print("X/6 - Sorry, try again tomorrow!")
+
 
 if __name__ == "__main__":
     main()
