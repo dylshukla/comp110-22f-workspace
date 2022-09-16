@@ -2,16 +2,19 @@
 
 __author__: str = "730577405"
 
+
 def all(nums: list[int], num: int) -> bool:
     """Checks if list numbers are all same as provided int."""
     i: int = 0
+    isFalse: bool = True
     while i < len(nums):
         if num == nums[i]:
             i += 1
         else:
             return False
     if i == len(nums):
-        return True
+        isFalse = True
+    return isFalse
 
 
 def max(input: list[int]) -> int:
@@ -30,6 +33,7 @@ def max(input: list[int]) -> int:
 def is_equal(first: list[int], second: list[int]) -> bool:
     """Checks for deep equality between two lists."""
     k: int = 0
+    isTrue: bool = False
     if len(first) != len(second):
         return False
     while k < len(first):
@@ -38,4 +42,5 @@ def is_equal(first: list[int], second: list[int]) -> bool:
         else:
             return False
     if k == len(first):
-        return True
+        isTrue = True
+    return isTrue
