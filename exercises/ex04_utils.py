@@ -12,7 +12,9 @@ def all(nums: list[int], num: int) -> bool:
             i += 1
         else:
             return False
-    if i == len(nums):
+    if len(nums) == 0:
+        return False
+    elif i == len(nums):
         isFalse = True
     return isFalse
 
