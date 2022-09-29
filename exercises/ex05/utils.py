@@ -31,7 +31,7 @@ def concat(x: list[str], y: list[str]) -> list[str]:
 def sub(x: list[int], si: int, ei: int) -> list[int]:
     """Returns values of list within given intervals."""
     i: int = 0
-    ei = len(x) - 1
+    ei = len(x)
     y: list[int] = []
     if si < 0:
         si = i
