@@ -38,7 +38,7 @@ def concat_2() -> None:
 
 def test_sub_edge() -> None:
     """Edge case for sub."""
-    assert sub([10, 20, 30, 40], -1, 3) == [10, 20, 30]
+    assert sub([10, 20, 30, 40], -1, 7) == [10, 20, 30]
 
 
 def test_sub_1() -> None:
