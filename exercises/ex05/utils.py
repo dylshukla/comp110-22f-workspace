@@ -36,7 +36,7 @@ def sub(x: list[int], si: int, ei: int) -> list[int]:
     if si < 0:
         si = i
     if ei > len(x):
-        ei = len(x) - 1
+        ei = len(x)
     if len(x) == 0 or si > len(x) or ei <= 0:
         return y
     while i < len(x):
