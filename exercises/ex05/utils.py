@@ -17,8 +17,14 @@ def only_evens(x: list[int]) -> list[int]:
 def concat(x: list[str], y: list[str]) -> list[str]:
     """Combines two lists."""
     z: list[str] = []
-    z.append(x)
-    z.append(y)
+    i: int = 0
+    j: int = 0
+    while i < len(x):
+        z.append(x[i])
+        i += 1
+    while j < len(y):
+        z.append(y[j])
+        j += 1
     return z
 
 
