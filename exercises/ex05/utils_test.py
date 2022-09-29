@@ -21,31 +21,31 @@ def test_only_evens_2() -> None:
     assert([4, 10, 12]) == [4, 10, 12]
 
 
-def test_sub_edge() -> None:
-    """Edge case for sub."""
-    assert([], []) == []
-
-
-def test_sub_1() -> None:
-    """First use case for sub."""
-    assert([1, 2, 3], [4, 5, 6]) == [1, 2, 3, 4, 5, 6]
-
-
-def test_sub_2() -> None:
-    """Second use case for testing sub function."""
-    assert([4, 3, 1], [2, 6]) == [4, 3, 1, 2, 6]
-
-
 def concat_edge() -> None:
     """Edge case for concat."""
-    assert([10, 20, 30, 40], -1, 3) == [10, 20, 30]
+    assert([], []) == []
 
 
 def concat_1() -> None:
     """Use case for concat testing."""
-    assert([5, 10, 15], 1, 2) == [10]
+    assert([1, 2, 3], [4, 5, 6]) == [1, 2, 3, 4, 5, 6]
 
 
 def concat_2() -> None:
     """Second use case for concat testing."""
+    assert([4, 3, 1], [2, 6]) == [4, 3, 1, 2, 6]
+
+
+def test_sub_edge() -> None:
+    """Edge case for sub."""
+    assert([10, 20, 30, 40], -1, 3) == [10, 20, 30]
+
+
+def test_sub_1() -> None:
+    """First use case for sub."""
+    assert([5, 10, 15], 1, 2) == [10]
+
+
+def test_sub_2() -> None:
+    """Second use case for testing sub function."""
     assert([4, 7, 8, 1, 3], 1, 4) == [7, 8, 1]
