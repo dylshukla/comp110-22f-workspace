@@ -10,7 +10,7 @@ def only_evens(x: list[int]) -> list[int]:
     while i < len(x):
         if x[i] % 2 == 0:
             y.append(x[i])
-        i+= 1
+        i += 1
     return y
 
 

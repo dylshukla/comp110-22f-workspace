@@ -21,24 +21,24 @@ def test_only_evens_2() -> None:
     assert only_evens([4, 10, 12]) == [4, 10, 12]
 
 
-def concat_edge() -> None:
+def test_concat_edge() -> None:
     """Edge case for concat."""
     assert concat([], []) == []
 
 
-def concat_1() -> None:
+def test_concat_1() -> None:
     """Use case for concat testing."""
     assert concat([1, 2, 3], [4, 5, 6]) == [1, 2, 3, 4, 5, 6]
 
 
-def concat_2() -> None:
+def test_concat_2() -> None:
     """Second use case for concat testing."""
-    assert concat([4, 3, 1], [2, 6]) == [4, 3, 1, 2, 6]
+    assert concat([5, 9], [8, 9, 10]) == [5, 9, 8, 9, 10]
 
 
 def test_sub_edge() -> None:
     """Edge case for sub."""
-    assert sub([10, 20, 30, 40], -1, 7) == [10, 20, 30]
+    assert sub([10, 20, 30, 40], -1, 7) == [10, 20, 30, 40]
 
 
 def test_sub_1() -> None:
