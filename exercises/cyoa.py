@@ -1,4 +1,4 @@
-"""Some game ill think of."""
+"""What Organelle Are You?"""
 
 __author__: str = "730577405"
 
@@ -13,6 +13,7 @@ EMOJI_4: str = "\U0001F62D"
 
 
 def main() -> None:
+    """Main function for game."""
     global points
     greet()
     options: str = input("You can choose to end the game, try to earn an extra point through the access code, or just bypass our security measures and take the quiz. End, try, or bypass? ")
@@ -35,12 +36,14 @@ def main() -> None:
 
 
 def greet() -> None:
+    """Game start greeting for player."""
     print("Welcome to 'Which Organelle Are You?!' In this game you will answer a series of question to see what kind of organelle best suits your personality.")
     global player
     player = input("What is your name? ")
     
 
 def access_quiz() -> None:
+    """Access code to reach quiz questions."""
     global points
     print("First we have to see whether you are able to access our premium subscription! In order to play the quiz, input the number (from 1 to 3) that is the access code to this quiz.")
     print("If you guess on the first try, you have the option to take a free point! Guess here: ")
@@ -58,6 +61,7 @@ def access_quiz() -> None:
 
 
 def quiz(points: int) -> int:
+    """Quiz questions for player."""
     global answer
     question_1: str = input(f"Here is question 1. Do you enjoy taking charge of sitations and being perceived as the most important person in a group?{EMOJI_1} Answer yes or no: ")
     if str(question_1) == "yes":
