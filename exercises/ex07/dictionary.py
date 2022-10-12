@@ -28,7 +28,6 @@ def favorite_color(stuff: dict[str, str]) -> str:
     return favorite
 
 
-
 def count(idk: list[str]) -> dict[str, int]:
     """Displays number of times each string is displayed."""
     new: dict[str, int] = {}

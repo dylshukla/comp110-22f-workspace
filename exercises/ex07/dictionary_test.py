@@ -9,7 +9,7 @@ from exercises.ex07.dictionary import count
 
 def test_invert_edge() -> None:
     """Edge case for invert function"""
-    assert invert({'y': 'f', 'x': 's', 'w': 's'}) == {'f': 'y', 's': 'x', 's': 'w'}
+    assert invert({}) == {}
 
 
 def test_invert_use_1() -> None:
