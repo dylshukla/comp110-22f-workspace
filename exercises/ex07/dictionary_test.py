@@ -8,7 +8,7 @@ from exercises.ex07.dictionary import count
 
 
 def test_invert_edge() -> None:
-    """Edge case for invert function"""
+    """Edge case for invert function."""
     assert invert({}) == {}
 
 

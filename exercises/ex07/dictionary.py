@@ -16,7 +16,7 @@ def invert(stuff: dict[str, str]) -> dict[str, str]:
 def favorite_color(stuff: dict[str, str]) -> str:
     """Counts favorite color instances and returns favorite color."""
     favorite: str = ""
-    new: list[str] = ()
+    new: list[str] = []
     i: int = 0
     for colors in stuff:
         new.append(stuff[colors])
