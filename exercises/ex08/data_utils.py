@@ -48,7 +48,7 @@ def head(first: dict[str, list[str]], N: int) -> dict[str, list[str]]:
         z: list[str] = []
         j: int = 0
         while j < N:
-            z.append(first[i][j])
+            z.append((first[i])[j])
             j += 1
         y[i] = z
     return y
