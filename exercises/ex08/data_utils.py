@@ -3,7 +3,6 @@
 __author__ = "730577405"
 
 from csv import DictReader
-from queue import Empty
 
 
 def read_csv_rows(filename: str) -> list[dict[str, str]]:
