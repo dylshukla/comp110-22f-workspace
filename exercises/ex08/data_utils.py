@@ -49,7 +49,7 @@ def head(first: dict[str, list[str]], N: int) -> dict[str, list[str]]:
         z: list[str] = []
         j: int = 0
         while j < N:
-            z.append((first[i])[j])
+            z.append(first[i][j])
             j += 1
         y[i] = z
     return y
@@ -65,15 +65,15 @@ def select(one: dict[str, list[str]], two: list[str]) -> dict[str, list[str]]:
 
 def concat(x: dict[str, list[str]], y: dict[str, list[str]]) -> dict[str, list[str]]:
     """Create a column-based table from combining two column-based tables."""
-    result: dict[str, list[str]] = {}
+    combined: dict[str, list[str]] = {}
     for column in x:
-        result[column] = x[column]
+        combined[column] = x[column]
     for column in y:
-        if column in result:
-            result[column] += y[column]
+        if column in combined:
+            combined[column] += y[column]
         else:
-            result[column] = y[column]
-    return result
+            combined[column] = y[column]
+    return combined
 
 
 def count(idk: list[str]) -> dict[str, int]:
