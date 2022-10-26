@@ -35,31 +35,31 @@ def columnar(row_table: list[dict[str, str]]) -> dict[str, list[str]]:
     return result
 
 
-def head(x: dict[str, list[str]], N: int) -> dict[str, list[str]]:
+def head(first: dict[str, list[str]], N: int) -> dict[str, list[str]]:
     """See the first N rows of data for each column."""
     y: dict[str, list[str]] = {}
-    if N >= len(x):
-        return x
+    if N >= len(first):
+        return first
     if N == 0:
         empty: list[str] = []
-        for a in x:
+        for a in first:
             y[a] = empty
         return y
-    for i in x:
+    for i in first:
         z: list[str] = []
         j: int = 0
         while j < N:
-            z.append((x[i])[j])
+            z.append((first[i])[j])
             j += 1
         y[i] = z
     return y
 
 
-def select(x: dict[str, list[str]], y: list[str]) -> dict[str, list[str]]:
+def select(one: dict[str, list[str]], two: list[str]) -> dict[str, list[str]]:
     """Select specific columns to return."""
     result: dict[str, list[str]] = {}
-    for column in y:
-        result[column] = x[column]
+    for column in two:
+        result[column] = one[column]
     return result
 
 
