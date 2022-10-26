@@ -35,6 +35,7 @@ def columnar(row_table: list[dict[str, str]]) -> dict[str, list[str]]:
 
 
 def head(x: dict[str, list[str]], N: int) -> dict[str, list[str]]:
+    """See the first N rows of data for each column."""
     y: dict[str, list[str]] = {}
     if N >= len(x):
         return x
@@ -47,13 +48,14 @@ def head(x: dict[str, list[str]], N: int) -> dict[str, list[str]]:
         z: list[str] = []
         j: int = 0
         while j < N:
-            z.append(x[i][j])
+            z.append((x[i])[j])
             j += 1
         y[i] = z
     return y
 
 
 def select(x: dict[str, list[str]], y: list[str]) -> dict[str, list[str]]:
+    """Select specific columns to return."""
     result: dict[str, list[str]] = {}
     for column in y:
         result[column] = x[column]
@@ -61,6 +63,7 @@ def select(x: dict[str, list[str]], y: list[str]) -> dict[str, list[str]]:
 
 
 def concat(x: dict[str, list[str]], y: dict[str, list[str]]) -> dict[str, list[str]]:
+    """Create a column-based table from combining two column-based tables."""
     result: dict[str, list[str]] = {}
     for column in x:
         result[column] = x[column]
