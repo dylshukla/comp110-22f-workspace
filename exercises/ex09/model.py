@@ -26,7 +26,8 @@ class Point:
         return Point(x, y)
     
     def distance(self, other: Point) -> int:
-        length: float = sqrt((other.x - self.x) ** 2 - (other.y - self.y) ** 2)
+        """Distance between two points."""
+        length: float = sqrt((other.x - self.x) ** 2 + (other.y - self.y) ** 2)
         return length
 
 
@@ -42,28 +43,33 @@ class Cell:
         self.direction = direction
 
     def tick(self) -> None:
+        """Immunity following recovery."""
         self.location = self.location.add(self.direction)
-        if self.is_infected() == True:
+        if self.is_infected() is True:
             self.sickness += 1
         if self.sickness > constants.RECOVERY_PERIOD:
             self.immunize()
     
     def contract_disease(self) -> None:
+        """Causes cell to be infected."""
         self.sickness = constants.INFECTED
     
     def is_vulnerable(self) -> bool:
+        """Determines if the cell is infected."""
         if self.sickness == constants.VULNERABLE:
             return True
         else:
             return False
         
     def is_infected(self) -> bool:
+        """Determines infected cell."""
         if self.sickness >= constants.INFECTED:
             return True
         else:
             return False
 
     def is_immune(self) -> bool:
+        """Gives immunity to cell."""
         if self.sickness == constants.IMMUNE:
             return True
         else:
@@ -79,12 +85,14 @@ class Cell:
             return "green"
 
     def contact_with(self, another: Cell) -> None:
-        if self.is_infected() and another.is_vulnerable():
+        """Makes cells infected with interactions."""
+        if self.is_infected() == True and another.is_vulnerable() == True:
             another.contract_disease()
-        if another.is_vulnerable() and self.is_vulnerable():
-                self.contract_disease()
+        if another.is_infected() == True and self.is_vulnerable() == True:
+            self.contract_disease()
     
     def immunize(self) -> None:
+        """Gives immunization to some cells."""
         self.sickness = constants.IMMUNE
 
 
@@ -157,7 +165,8 @@ class Model:
             cell.location.y = constants.MIN_Y
             cell.direction.y *= -1.0
     
-    def check_contacts(self, cell: Cell) -> None:
+    def check_contacts(self) -> None:
+        """Checks the collision of points."""
         i: int = 0
         while i < len(self.population):
             j: int = 0
