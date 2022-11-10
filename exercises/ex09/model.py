@@ -86,9 +86,9 @@ class Cell:
 
     def contact_with(self, another: Cell) -> None:
         """Makes cells infected with interactions."""
-        if self.is_infected() == True and another.is_vulnerable() == True:
+        if self.is_infected() is True and another.is_vulnerable() is True:
             another.contract_disease()
-        if another.is_infected() == True and self.is_vulnerable() == True:
+        if another.is_infected() is True and self.is_vulnerable() is True:
             self.contract_disease()
     
     def immunize(self) -> None:
@@ -169,7 +169,7 @@ class Model:
         """Checks the collision of points."""
         i: int = 0
         while i < len(self.population):
-            j: int = 0
+            j: int = i + 1
             while j < len(self.population):
                 if self.population[i].location.distance(self.population[j].location) < constants.CELL_RADIUS:
                     self.population[i].contact_with(self.population[j])
